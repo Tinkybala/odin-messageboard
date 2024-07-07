@@ -1,0 +1,42 @@
+extends layout
+
+block content
+  nav 
+    h1 Messageboard
+
+  if(user)
+    h2= `Hello ${user.first_name}!`
+    if(user.first_name.toLowerCase() === "hazel")
+      p= "Good job dear dear! You actually took the effort to visit my website :) Love you!"
+    
+    div(class="menu")
+      a(href= "/account") Account Settings
+      a(href= "/create") Create New Message 
+      a(href="/log-out") Log Out
+
+    if(messages)
+      div(class= "messages")
+        each message in messages
+          div(class= "message")
+            h2= message.title
+            div(class="content")
+              p= message.content
+            p(class= "info")= `${user.status === "VIP" ? message.user : "Anonymous"}, ${message.date_formatted}`
+            if(user.is_admin)
+              form(method="POST" action=`/delete/${message._id}` class="delete")
+                input(type="hidden" name="message" value=message)
+                button Delete
+
+
+  else
+    form(method= "POST" class="log-in")
+      h2(class="title") Log In
+      label(for= "username") Username:
+      input(id= "username", name="username") 
+      label(for= "password") Password:
+      input(type="password", id= "password", name="password")
+      button(type= "submit") Log In
+      hr
+      p
+        | Don't have an account? 
+        a(href='/signup') Sign up here

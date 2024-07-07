@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  nav
+    h1 Messageboard
+
+  form(method= "POST" class="sign-up")
+    h2= title
+    each field in [{name: "first_name", label: "First Name"}, {name: "last_name", label: "Last Name"}, {name: "username", label: "Username"}, {name: "password", label: "Password"}, {name: "password2", label: "Confirm Password"}]
+      label(for= field.name)= field.label
+      input(id= field.name, name= field.name, class=errors && errors.some(error => error.path === field.name) ? "error" : "")
+    button(type= "submit") Submit
+    hr
+    p 
+      | Already have an account? 
+      a(href="/") Login here
+
+  if(errors)
+    ul
+      each error in errors
+        li= error.msg
+

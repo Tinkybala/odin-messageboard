@@ -1,0 +1,13 @@
+extends layout 
+
+block content
+    nav
+        h1 Messageboard
+    form(method="POST")
+        h2 Account Details 
+        label(for= "vip") VIP Code:
+        input(id= "vip", name="vip")
+        button(type= "submit") Enter
+        p= `Member Status: ${user.status}`
+
+    p ps: VIP code is Password123

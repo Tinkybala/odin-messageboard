@@ -1,0 +1,176 @@
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --blue: #96bfe6;
+  --darkblue: #000831;
+  --gray: #b5d1cc;
+  --red: #fa2b00;
+}
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gray);
+  box-sizing: border-box;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 20px;
+  row-gap: 10px;
+  background-color: white;
+  max-width: 80%;
+
+}
+a {
+  color: #00B7FF;
+}
+
+hr {
+  width: 80%;
+  border: none;
+  height: 1px;
+  background-color: lightgrey;  
+  margin: 10px 0;
+}
+
+.log-in, .sign-up {
+  width: 30rem;
+}
+
+.log-in input, .sign-up input {
+  width: 80%;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 1px gray solid;
+}
+
+.log-in button, .sign-up button{
+  background-color: var(--darkblue);
+  color: white;
+  border: 0px;
+  border-radius: 5px;
+  width: 80%;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.log-in button:hover, .sign-up button:hover {
+  cursor: pointer;
+  background-color: var(--blue);
+}
+
+form a {
+  color: var(--blue);
+}
+
+.log-in a:hover {
+  color: var(--darkblue);
+}
+
+nav {
+  max-width: 80%;
+}
+
+nav h1 {
+  font-size: clamp(1rem, 5vw, 4rem);
+  color: var(--darkblue);
+}
+
+input.error {
+  outline: none;
+  border: 1px var(--red) solid;
+}
+
+.messages {
+  width: 100%;
+  padding: 20px;
+  height: 50vh;
+  overflow: auto;
+}
+
+form.delete{
+  all: unset;
+}
+
+.message {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--darkblue);
+  display: flex;
+  flex-direction: column;
+  margin-block: 10px;
+}
+
+.message p{
+  color: white;
+}
+
+.message h2{
+  color: var(--gray);
+}
+
+.message p.info {
+  align-self: flex-end;
+}
+
+.message form {
+  align-self: flex-end;
+}
+/*this one*/
+.message .content {
+  overflow: hidden;
+}
+
+.delete button {
+  background-color: var(--blue);
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  will-change: transform;
+  transition: transform 0.7s;
+}
+
+.delete button:hover {
+  transform: scale(1.1);
+}
+
+.menu {
+  align-self: flex-end;
+  margin-bottom: 10px;
+}
+
+.menu a {
+  all: unset;
+  cursor: pointer;
+  padding-inline: 10px;
+  color: var(--darkblue);
+}
+
+.menu a {
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.menu a:hover {
+  background-color: var(--blue);
+  color: white;
+}
+
+.menu a:active {
+  background-color: var(--darkblue);
+}
+
+.message-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
