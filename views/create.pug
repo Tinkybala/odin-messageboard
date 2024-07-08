@@ -1,17 +1,21 @@
 extends layout
 
 block content
-    nav 
-        h1 Messageboard
-    form(method="POST")
-        h2= title
-        label Title: 
-            input(type="text" id= "title" name= "title")
-        label(class="message-label") Message:
-            textarea(id= "message" name="message" rows="3" cols="50")
-        button(type= "submit") Send
+    if(user)
+        nav 
+            h1 Messageboard
+        form(method="POST")
+            h2= title
+            label Title: 
+                input(type="text" id= "title" name= "title")
+            label(class="message-label") Message:
+                textarea(id= "message" name="message" rows="3" cols="50")
+            button(type= "submit") Send
 
-    if(errors)
-        ul
-        each error in errors
-            li= error.msg
+        if(errors)
+            ul
+            each error in errors
+                li= error.msg
+    
+    else 
+        h1 Please Log-in first 

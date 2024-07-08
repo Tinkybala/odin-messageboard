@@ -6,7 +6,7 @@ const { body, validationResult } = require('express-validator');
 const User = require('../models/user');
 
 router.get('/', (req, res, next) => {
-    res.render('create', {title: "Create New Post"});
+    res.render('create', {title: "Create New Post", user: req.user});
 });
 
 router.post('/', [
